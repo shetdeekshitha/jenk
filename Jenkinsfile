@@ -98,6 +98,7 @@ pipeline {
     stage('Confirm button') {
       steps {
         input 'Please confirm'
+        checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'github', url: 'https://github.com/shetdeekshitha/jenk.git']])
         sh("echo asdasdasd")
       }
     }
